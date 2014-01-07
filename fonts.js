@@ -1,4 +1,5 @@
 $fonts = [
-	"MadokaRunes"
+	"MadokaRunes",
+	"MadokaMusical"
 ];
 $fontsize = 72;
