@@ -1,4 +1,4 @@
 $fonts = [
-	"Madoka Runes"
+	"MadokaRunes"
 ];
 $fontsize = 72;
