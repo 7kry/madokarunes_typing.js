@@ -1,11 +1,24 @@
-function startMRTyping(fonts, fontsize, words, trial){
+function startMRTyping(fontsize, words, trial){
 	(new (function(){
 		var div   = $("<div>").css("font-size", fontsize).appendTo("body");
 		var input = $("<input>").appendTo("body");
 		var miss_count = 0;
 		var init = this.init = function(){
-			div.text(words[Math.floor(words.length * Math.random())]);
-			div.css("font-family", fonts[Math.floor(fonts.length * Math.random())]);
+			w = words[Math.floor(words.length * Math.random())];
+			switch(Math.floor(Math.random() * 3)){
+			case 0:
+				div.css("font-family", "MadokaRunes");
+				div.text(w.toLowerCase());
+				break;
+			case 1:
+				div.css("font-family", "MadokaRunes");
+				div.text(w.toUpperCase());
+				break;
+			case 2:
+				div.css("font-family", "MadokaMusical");
+				div.text(w.toLowerCase());
+				break;
+			}
 			miss_count = 0;
 			input.val("");
 			input.focus();
