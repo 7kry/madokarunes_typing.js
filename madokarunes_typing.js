@@ -1,4 +1,4 @@
-function startMRTyping(fonts, fontsize, words, trial = 3){
+function startMRTyping(fonts, fontsize, words, trial){
 	(new (function(){
 		var div   = $("<div>").css("font-size", fontsize).appendTo("body");
 		var input = $("<input>").appendTo("body");
@@ -13,7 +13,7 @@ function startMRTyping(fonts, fontsize, words, trial = 3){
 		input.keydown(function(e){
 			var keycode = (e.which ? e.which : event.keyCode);
 			if(keycode == 13){
-				if(input.val() == div.text()){
+				if(input.val().toLowerCase() == div.text().toLowerCase()){
 					init();
 				}else if(++miss_count >= trial){
 					alert(div.text());
